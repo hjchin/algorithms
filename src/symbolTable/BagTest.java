@@ -18,5 +18,6 @@ public class BagTest {
             assertEquals(expected, i.intValue());
             expected++;
         }
+
     }
 }

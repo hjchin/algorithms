@@ -12,7 +12,9 @@ public class Bag implements Iterable<Integer> {
     }
 
     public void add(int item){
-        array[size++] = item;
+        if(size<array.length){
+            array[size++] = item;
+        }
     }
 
     @Override
