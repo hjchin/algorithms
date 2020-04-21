@@ -3,7 +3,6 @@ package implementation;
 public class timeInWords {
 
     public static String run(int h, int minutes){
-        String mString = "";
 
         if(minutes == 0) {
             return getHour(h)+" o' clock";
