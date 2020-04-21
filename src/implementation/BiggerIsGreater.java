@@ -6,34 +6,30 @@ public class BiggerIsGreater {
 
     public static String run(String w){
         char[] v = w.toCharArray();
-        if(v.length == 0 || v.length == 1){
-            return "no answer";
-        }
+
+        int i = v.length-1;
+        while(i>1 && v[i-1]>=v[i]) i--;
+
+        if(i<=0) return "no answer";
 
         boolean found = false;
-        int ia = v.length - 1;
-        int ib = ia - 1;
-        for(; ia > 0; ia--){
-            for(ib=ia-1;ib>-1;ib--){
-                if(v[ia] > v[ib]){
-                    char temp = v[ib];
-                    v[ib] = v[ia];
-                    v[ia] = temp;
-                    found = true;
-                    break;
-                }
+        for(int j=v.length-1;j>i-1;j--){
+            if(v[j]>v[i-1]){
+                char t = v[j];
+                v[j] = v[i-1];
+                v[i-1] = t;
+                found = true;
+                break;
             }
-
-            if(found) break;
         }
 
         if(!found) return "no answer";
 
         String temp = new String(v);
-        char[] sort = temp.substring(ib+1).toCharArray();
+        char[] sort = temp.substring(i).toCharArray();
         Arrays.sort(sort);
         String sortString = new String(sort);
         String r = new String(v);
-        return r.substring(0,ib+1)+sortString;
+        return r.substring(0,i)+sortString;
     }
 }
