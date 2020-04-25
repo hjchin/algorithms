@@ -31,9 +31,6 @@ public class SherlockAndTheValidStringTest {
 
         s = "aaaaaaaa";
         assertEquals("YES",SherlockAndTheValidString.run(s));
-
-
-
     }
 
 
