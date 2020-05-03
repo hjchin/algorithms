@@ -1,7 +1,5 @@
 package sorting;
 
-import java.util.Arrays;
-
 public class FraudulentActivityNotifications {
 
     public static int run(int[] expenditure, int d){
@@ -9,7 +7,7 @@ public class FraudulentActivityNotifications {
         int ntfCount = 0;
         for(int i=0;i<expenditure.length && (i+d-1)<expenditure.length;i++){
             int hi = i+d-1;
-            Quick.sort(expenditure, i, hi);
+            Insertion.sort(expenditure, i, hi);
             double median = getMedian(expenditure, i,hi);
             if(hi+1< expenditure.length && expenditure[hi+1] >= median*2){
                 ntfCount++;
@@ -29,38 +27,21 @@ public class FraudulentActivityNotifications {
         }
     }
 
-    public static class Quick{
+    public static class Insertion {
 
-        public static void sort(int[] a, int lo, int hi){
-            if(hi<=lo) return;
-            int j = partition(a, lo, hi);
-            sort(a, lo, j-1);
-            sort(a, j+1, hi);
-        }
-
-        private static int partition(int[] a, int lo, int hi){
-            int i=lo,j=hi;
-
-            while(true){
-
-                while(a[i]<a[lo]) if(i<hi) i++;
-                while(a[j]>a[lo]) if(j>lo) j--;
-
-                if(j<=i) break;
-
-                int tmp = a[i];
-                a[i] = a[j];
-                a[j] = tmp;
+        public static void sort(int[] a, int lo, int hi) {
+            for (int i = lo; i <= hi; i++) {
+                for (int j = i; j > 0; j--) {
+                    if (a[j] < a[j - 1]) {
+                        int tmp = a[j];
+                        a[j] = a[j - 1];
+                        a[j - 1] = tmp;
+                    } else {
+                        break;
+                    }
+                }
             }
 
-            int tmp = a[lo];
-            a[lo] = a[j];
-            a[j] = tmp;
-
-            return j;
         }
     }
-
-
-
 }

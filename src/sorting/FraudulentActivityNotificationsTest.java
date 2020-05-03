@@ -11,5 +11,24 @@ public class FraudulentActivityNotificationsTest {
     public void test(){
         int[] exp = {10,20,30,40,50};
         assertEquals(1,FraudulentActivityNotifications.run(exp,3));
+
     }
+
+    @Test
+    public void test2(){
+        int[] exp = {2,3,4,2,3,6,8,4,5};
+        assertEquals(2,FraudulentActivityNotifications.run(exp,5));
+    }
+
+    /*
+
+    sort index -> exp
+    map exp - > {index1, index2}
+
+    for(e: exp){
+
+    }
+
+
+     */
 }
