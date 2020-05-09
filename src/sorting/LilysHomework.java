@@ -102,4 +102,17 @@ public class LilysHomework {
         array[i] = array[j];
         array[j] = tmp;
     }
+
+    /*
+        size:3, int[] = 1,2,3
+        size 4, int[] = 1,2,3,4
+
+     */
+    public static void reverse(int[] arr){
+        int len = arr.length/2;
+        for(int i=0,j=arr.length-1;i<len;i++,j--){
+            swap(arr,i,j);
+        }
+    }
+
 }

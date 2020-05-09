@@ -41,5 +41,25 @@ public class LilysHomeworkTest {
         assertEquals(2,LilysHomework.run(array));
     }
 
+    @Test
+    public void testReverse(){
+        int[] array = {2,5,3,1};
+        LilysHomework.reverse(array);
+        assertEquals(1,array[0]);
+        assertEquals(3,array[1]);
+        assertEquals(5, array[2]);
+        assertEquals(2, array[3]);
+    }
+
+    @Test
+    public void testReverse2(){
+        int[] array = {3,4,2,5,1};
+        LilysHomework.reverse(array);
+        assertEquals(1,array[0]);
+        assertEquals(5,array[1]);
+        assertEquals(2, array[2]);
+        assertEquals(4, array[3]);
+        assertEquals(3, array[4]);
+    }
 
 }
