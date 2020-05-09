@@ -84,6 +84,52 @@ public class Sort {
         }
     }
 
+    public static void quicksort(int[] arr, int lo, int hi){
+        if(lo>=hi) return;
+        int pivot = partition(arr, lo, hi);
+        quicksort(arr, lo, pivot-1);
+        quicksort(arr, pivot+1, hi);
+    }
+
+    public static int partition(int[] arr, int lo, int hi){
+        int i=lo;
+        int j=hi;
+
+        while(true){
+            while(arr[i]<arr[lo]) if(i<hi) i++;
+            while(arr[j]>arr[lo]) if(j>lo) j--;
+            if(i>=j) break;
+            swap(arr, i, j);
+        }
+
+        swap(arr, i, lo);
+        return j;
+    }
+
+    public static void quicksort3way(int arr[], int lo, int hi){
+        if(lo>=hi) return;
+
+        int i=lo, lt=lo;
+        int gt=hi;
+        int p = arr[lo];
+
+        while(i<=gt){
+            if(arr[i]<p){
+                swap(arr, i, lt);
+                i++;
+                lt++;
+            }else if(arr[i]> p){
+                swap(arr, i, gt);
+                gt--;
+            }else{
+                i++;
+            }
+        }
+
+        quicksort3way(arr, lo,lt-1);
+        quicksort3way(arr, gt+1,hi);
+    }
+
     public static void swap(int[] arr, int i, int j){
         int tmp = arr[i];
         arr[i] = arr[j];

@@ -121,4 +121,50 @@ public class SelectionSortTest {
         assertEquals(8,arr2[5]);
         assertEquals(9,arr2[6]);
     }
+
+    @Test
+    public void testQuickSort(){
+        int[] arr = {3,4,6,8,0,9,2};
+        Sort.quicksort(arr, 0,6);
+        assertEquals(0,arr[0]);
+        assertEquals(2,arr[1]);
+        assertEquals(3,arr[2]);
+        assertEquals(4,arr[3]);
+        assertEquals(6,arr[4]);
+        assertEquals(8,arr[5]);
+        assertEquals(9,arr[6]);
+
+        int[] arr2 = {0,2,3,4,6,8,9};
+        Sort.quicksort(arr2, 0, 6);
+        assertEquals(0,arr2[0]);
+        assertEquals(2,arr2[1]);
+        assertEquals(3,arr2[2]);
+        assertEquals(4,arr2[3]);
+        assertEquals(6,arr2[4]);
+        assertEquals(8,arr2[5]);
+        assertEquals(9,arr2[6]);
+    }
+
+    @Test
+    public void test3wayQuickSort(){
+        int[] arr = {3,4,6,8,0,9,2};
+        Sort.quicksort3way(arr, 0,6);
+        assertEquals(0,arr[0]);
+        assertEquals(2,arr[1]);
+        assertEquals(3,arr[2]);
+        assertEquals(4,arr[3]);
+        assertEquals(6,arr[4]);
+        assertEquals(8,arr[5]);
+        assertEquals(9,arr[6]);
+
+        int[] arr2 = {0,2,3,4,6,8,9};
+        Sort.quicksort3way(arr2, 0, 6);
+        assertEquals(0,arr2[0]);
+        assertEquals(2,arr2[1]);
+        assertEquals(3,arr2[2]);
+        assertEquals(4,arr2[3]);
+        assertEquals(6,arr2[4]);
+        assertEquals(8,arr2[5]);
+        assertEquals(9,arr2[6]);
+    }
 }
