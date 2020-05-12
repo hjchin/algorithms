@@ -1,6 +1,7 @@
-import org.junit.Test;
+package sorting;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
+import sorting.Quick;
 
 public class QuickTest {
 

@@ -130,9 +130,17 @@ public class Sort {
         quicksort3way(arr, gt+1,hi);
     }
 
+    public static void heapSort(){
+
+    }
+
     public static void swap(int[] arr, int i, int j){
         int tmp = arr[i];
         arr[i] = arr[j];
         arr[j] = tmp;
+    }
+
+    public static boolean less(int[] arr, int i, int j){
+        return arr[i] < arr[j];
     }
 }
