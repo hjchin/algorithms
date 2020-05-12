@@ -14,13 +14,12 @@ public class MaxPriorityQueue {
 
     /*
         tasks 1:
-        1. minPriorityQueue
         2. heapsort
         3. sorting algorithms time complexity comparison.
 
      */
 
-    private int N=1;// N = last index
+    private int N;
     private int[] arr;
 
     public MaxPriorityQueue(int size){
@@ -28,13 +27,12 @@ public class MaxPriorityQueue {
     }
 
     public void insert(int v){
-        arr[N] = v;
+        arr[++N] = v;
         swim(N);
-        N++;
     }
 
     private void swim(int i){
-        while(i > 1 && arr[i] < arr[i/2]){
+        while(i > 1 && arr[i] > arr[i/2]){
             swap(i,i/2);
             i/=2;
         }
@@ -44,7 +42,7 @@ public class MaxPriorityQueue {
         while(j*2<=N){
             int k=j*2;
             if(k<N && arr[k]<arr[k+1]) k++;
-            if(arr[k]<arr[j]){
+            if(arr[k]>arr[j]){
                 swap(k, j);
                 j = k;
             }else{
