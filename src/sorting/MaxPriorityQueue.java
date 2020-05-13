@@ -11,14 +11,6 @@ public class MaxPriorityQueue {
     4. parent index, k has children at 2k and 2k+1
      */
 
-
-    /*
-        tasks 1:
-        2. heapsort
-        3. sorting algorithms time complexity comparison.
-
-     */
-
     private int N;
     private int[] arr;
 

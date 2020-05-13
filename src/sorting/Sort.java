@@ -130,8 +130,28 @@ public class Sort {
         quicksort3way(arr, gt+1,hi);
     }
 
-    public static void heapSort(){
+    public static void heapSort(int[] array){
+        int N = array.length-1;
+        for(int k=N/2;k>=0;k--){
+            sink(array, k, N);
+        }
+        while(N>0){
+            swap(array, 0, N--);
+            sink(array, 0,N);
+        }
+    }
 
+    private static void sink(int[] array, int i, int N){
+        while(i*2+1<=N){
+            int k = i*2+1;
+            if(k<N && array[k]<array[k+1]) k++;
+            if(array[k]>array[i]){
+                swap(array, k, i);
+                i = k;
+            }else{
+                break;
+            }
+        }
     }
 
     public static void swap(int[] arr, int i, int j){

@@ -167,4 +167,17 @@ public class SortTest {
         assertEquals(8,arr2[5]);
         assertEquals(9,arr2[6]);
     }
+
+    @Test
+    public void testHeapSort(){
+        int[] arr = {3,4,6,8,0,9,2};
+        Sort.heapSort(arr);
+        assertEquals(0,arr[0]);
+        assertEquals(2,arr[1]);
+        assertEquals(3,arr[2]);
+        assertEquals(4,arr[3]);
+        assertEquals(6,arr[4]);
+        assertEquals(8,arr[5]);
+        assertEquals(9,arr[6]);
+    }
 }
