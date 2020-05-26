@@ -23,8 +23,8 @@ public class Graph {
         adj[w].add(x);
     }
 
-    public Iterator<Integer> getAdj(int x){
-        return adj[x].iterator();
+    public Iterable<Integer> getAdj(int x){
+        return adj[x];
     }
 
     public int V(){

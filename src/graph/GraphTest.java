@@ -16,9 +16,8 @@ public class GraphTest {
         g.addEdge(1,2);
         g.addEdge(0,2);
 
-        Iterator<Integer> it = g.getAdj(1);
-        while(it.hasNext()){
-            System.out.println(it.next());
+        for(Integer i: g.getAdj(1)){
+            System.out.println(i);
         }
     }
 
