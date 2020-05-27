@@ -35,6 +35,10 @@ public class SearchTest {
         BreadthFirstSearch bfs = new BreadthFirstSearch(g, 0);
         assertEquals("0>1>3>6", bfs.pathTo(6));
 
+        ConnectedComponents cc = new ConnectedComponents(g);
+        assertTrue(cc.isConnected(0,8));
+        assertTrue(cc.isConnected(0,5));
+        assertFalse(cc.isConnected(0,9));
     }
 
 }
