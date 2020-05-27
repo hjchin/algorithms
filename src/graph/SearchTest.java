@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class DepthFirstSearchTest {
+public class SearchTest {
 
     @Test
     public void test(){
@@ -31,6 +31,10 @@ public class DepthFirstSearchTest {
         assertEquals("0>1>2>7>8", dps.pathTo(8));
         assertEquals("0>1>3>6", dps.pathTo(6));
         assertEquals(null, dps.pathTo(9));
+
+        BreadthFirstSearch bfs = new BreadthFirstSearch(g, 0);
+        assertEquals("0>1>3>6", bfs.pathTo(6));
+
     }
 
 }
