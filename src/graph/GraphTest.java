@@ -21,4 +21,13 @@ public class GraphTest {
         }
     }
 
+    @Test
+    public void testDirectedGraph(){
+        DirectedGraph g = new DirectedGraph(3);
+        g.addEdge(0,1);
+        g.addEdge(1,2);
+        g.addEdge(0,2);
+        assertEquals(0,g.degree(2));
+    }
+
 }

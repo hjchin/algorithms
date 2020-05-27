@@ -39,6 +39,10 @@ public class Graph {
             bag.add(i);
         }
 
+        public int size(){
+            return bag.size();
+        }
+
         @Override
         public Iterator<Integer> iterator() {
             return bag.iterator();
