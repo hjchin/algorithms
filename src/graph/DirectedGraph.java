@@ -6,7 +6,7 @@ public class DirectedGraph {
     int size;
 
     DirectedGraph(int V){
-        int size = V;
+        size = V;
         bag = new Graph.Bag[V];
         for(int i=0;i<V;i++){
             bag[i] = new Graph.Bag();
