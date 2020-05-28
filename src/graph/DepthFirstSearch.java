@@ -21,8 +21,8 @@ public class DepthFirstSearch {
         marked[s] = true;
         for(int i:g.getAdj(s)){
             if(!marked[i]){
-                dps(g, i);
                 edgeTo[i] = s;
+                dps(g, i);
             }
         }
     }
