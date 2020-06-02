@@ -7,13 +7,13 @@ import java.util.Iterator;
 
 public class Graph {
 
-    Bag[] adj;
+    Bag<Integer>[] adj;
     int V;
 
     Graph(int V){
         adj = new Bag[V];
         for(int i=0;i<V;i++){
-            adj[i] = new Bag();
+            adj[i] = new Bag<Integer>();
         }
         this.V = V;
     }
@@ -31,11 +31,11 @@ public class Graph {
         return V;
     }
 
-    static class Bag implements Iterable<Integer>{
+    static class Bag<T> implements Iterable<T>{
 
-        ArrayList<Integer> bag = new ArrayList<Integer>();
+        ArrayList<T> bag = new ArrayList<T>();
 
-        public void add(int i){
+        public void add(T i){
             bag.add(i);
         }
 
@@ -44,7 +44,7 @@ public class Graph {
         }
 
         @Override
-        public Iterator<Integer> iterator() {
+        public Iterator<T> iterator() {
             return bag.iterator();
         }
     }
