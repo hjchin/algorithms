@@ -31,4 +31,8 @@ public class EdgeWeightedGraph {
     public Iterable<Edge> edges(){
         return edges;
     }
+
+    public int V(){
+        return V;
+    }
 }
