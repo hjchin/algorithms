@@ -1,9 +1,12 @@
 package graph;
 
+import java.util.ArrayList;
+
 public class EdgeWeightedGraph {
 
     int V;
     Graph.Bag<Edge> adj[];
+    ArrayList<Edge> edges = new ArrayList<Edge>();
 
     EdgeWeightedGraph(int V){
         this.V = V;
@@ -18,9 +21,14 @@ public class EdgeWeightedGraph {
         int w = e.other(v);
         adj[v].add(e);
         adj[w].add(e);
+        edges.add(e);
     }
 
     public Iterable<Edge> adj(int v){
         return adj[v];
+    }
+
+    public Iterable<Edge> edges(){
+        return edges;
     }
 }

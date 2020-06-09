@@ -38,4 +38,14 @@ public class EdgeWeightedGraphTest {
             System.out.println(e.other(1));
         }
     }
+
+    @Test
+    public void test2(){
+        String str = "123";
+        String str2 = str;
+        str = "234";
+
+        System.out.println(str2);
+
+    }
 }
