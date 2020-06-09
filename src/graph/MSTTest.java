@@ -1,14 +1,15 @@
 package graph;
 
+import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+public class MSTTest {
 
-public class KruskalMSTTest {
+    private EdgeWeightedGraph g;
 
-    @Test
-    public void test(){
-        EdgeWeightedGraph g = new EdgeWeightedGraph(8);
+    @Before
+    public void prepare(){
+        g = new EdgeWeightedGraph(8);
         Edge e02 = new Edge(0,2,0.26);
         Edge e04 = new Edge(0,4,0.38);
         Edge e06 = new Edge(0,6,0.58);
@@ -42,11 +43,26 @@ public class KruskalMSTTest {
         g.addEdge(e46);
         g.addEdge(e47);
         g.addEdge(e57);
+    }
 
+    @Test
+    public void testKruskalMST(){
+        System.out.println("Kruskal MST");
         KruskalMST mst = new KruskalMST(g);
         for(Edge e: mst.edges()){
             System.out.println("edge: "+e.either()+"-"+e.other(e.either()));
         }
     }
+
+    @Test
+    public void testPrimLazyMST(){
+        System.out.println("Prim lazy MST");
+        PrimLazyMST mst = new PrimLazyMST(g);
+        for(Edge e: mst.edges()){
+            System.out.println("edge: "+e.either()+"-"+e.other(e.either()));
+        }
+    }
+
+
 
 }
