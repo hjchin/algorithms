@@ -1,6 +1,6 @@
 package graph;
 
-public class DirectedGraph {
+public class DirectedGraph{
 
     Graph.Bag[] bag;
     int size;

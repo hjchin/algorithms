@@ -41,6 +41,22 @@ public class SPTest {
            p = path+ (p.length() > 0 ? ",":"" )+p;
         }
         System.out.println(p);
+
+        assertEquals(9+4+1+3,(int)sp.distTo(3));
+    }
+
+    @Test
+    public void testTopologicalSP(){
+        TopologicalSP sp = new TopologicalSP(g, 0);
+        Iterable<DirectedEdge> edges = sp.pathTo(3);
+        String p = "";
+        for(DirectedEdge e: edges){
+            String path = e.from()+"->"+e.to();
+            p = path+ (p.length() > 0 ? ",":"" )+p;
+        }
+        System.out.println(p);
+
+        assertEquals(9+4+1+3,(int)sp.distTo(3));
     }
 
 }
