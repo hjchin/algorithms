@@ -1,12 +1,15 @@
 package sorting;
 
-import sun.misc.Queue;
-
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 
+/*
+Whenever George asks Lily to hang out, she's busy doing homework. George wants to help her finish it faster, but he's in over his head! Can you help George understand Lily's homework so she can hang out with him?
+
+Consider an array of  distinct integers, . George can swap any two elements of the array any number of times. An array is beautiful if the sum of  among  is minimal.
+
+Given the array , determine and return the minimum number of swaps that should be performed in order to make the array beautiful.
+ */
 public class LilysHomework {
 
     /*

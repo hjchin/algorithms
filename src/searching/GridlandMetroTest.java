@@ -21,7 +21,7 @@ public class GridlandMetroTest {
 
     @Test
     public void testOverlap(){
-        //test overlap at left;
+        //testKruskalMST overlap at left;
 
         /*
             ---
